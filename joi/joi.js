@@ -6,4 +6,18 @@ const signupSchema = Joi.object({
   password: Joi.string().required(),
 });
 
-module.exports = { signupSchema };
+const loginSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
+});
+
+const taskSchema = Joi.object({
+  task: Joi.string().required(),
+  status: Joi.string().required(),
+});
+
+module.exports = { 
+  signupSchema,
+  loginSchema,
+  taskSchema
+};

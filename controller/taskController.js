@@ -50,8 +50,8 @@ const updateTask = async (req, res, next) => {
 const deleteTask = async (req, res, next) => {
   try {
     const {id} = req.params
-    const result = await service.deleteTask(id)
-    res.status(OK).json(result)
+    await service.deleteTask(id)
+    res.status(OK).json({message: 'Task excluída com sucesso'})
 
   } catch (error) {
     next({statusCode: INTERNAL_SERVER_ERROR, message: error.message })
