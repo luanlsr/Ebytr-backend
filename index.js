@@ -16,11 +16,12 @@ const corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200 
 }
+
 app.use(cors(corsOptions))
 app.use(bodyParser.json());
 
-app.use('/', routerUser);
-app.use('/', routerTask);
+app.use('/user', routerUser);
+app.use('/task', routerTask);
 
 app.use(error)
 
